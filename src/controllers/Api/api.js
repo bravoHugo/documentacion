@@ -99,7 +99,7 @@ const getCredenciales = (req, res) => {
 
 const postCredenciales = async (req, res) => {
   const { nombres, apellidos, correo } = req.body;
-
+  console.log(nombres,apellidos);
   try {
     const data={
       nombres: nombres,
@@ -109,8 +109,7 @@ const postCredenciales = async (req, res) => {
       cliente_id: "",
       llave_secreta:"",
     }
-    const response = await axios.post("http://fast.spring.informaticapp.com:9060/token/registros", data);
-
+    const response = await axios.post("http://fast.spring.informaticapp.com:9091/token/registros", data);
     const credenciales = response.data;
     const cliente_id = credenciales.cliente_id;
     const llave_secreta = credenciales.llave_secreta;

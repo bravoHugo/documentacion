@@ -106,7 +106,7 @@
         const nombres = form.elements.nombres.value;
         const apellidos = form.elements.apellidos.value;
         const correo = form.elements.correo.value;
-
+        console.log(nombres, apellidos, correo);
         try {
           const response = await axios.post('/credenciales', {
             nombres,
